@@ -3,8 +3,8 @@ description: data layer of stitches
 publish_to: none
 
 environment:
-  sdk: ">=2.16.1 <3.0.0"
+  sdk: ">=2.15.1 <3.0.0"
 
 dependencies:
-
-dev_dependencies:
+  localstore: ^1.2.3
+  get_it: ^7.2.0

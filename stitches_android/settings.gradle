@@ -10,7 +10,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // 本地Flutter仓库，生成的AAR的目录
         maven { url "../stitches_flutter_module/build/host/outputs/repo" }
+        // Flutter依赖的仓库
         maven { url 'https://storage.googleapis.com/download.flutter.io' }
     }
 }

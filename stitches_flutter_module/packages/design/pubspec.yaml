@@ -3,8 +3,4 @@ description: design layer of stitches
 publish_to: none
 
 environment:
-  sdk: ">=2.16.1 <3.0.0"
-
-dependencies:
-
-dev_dependencies:
+  sdk: ">=2.15.1 <3.0.0"
