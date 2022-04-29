@@ -28,6 +28,7 @@ class NoteLocalDataSource {
     }
 
     await db.collection('notes').doc(id).set({
+      'id': id,
       'title': note.title,
       'content': note.content,
     });

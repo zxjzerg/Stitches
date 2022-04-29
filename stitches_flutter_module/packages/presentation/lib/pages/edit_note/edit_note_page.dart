@@ -4,12 +4,34 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:presentation/pages/edit_note/bloc/edit_note_bloc.dart';
 
 /// 创建/编辑笔记界面
-class EditNotePage extends StatelessWidget {
+class EditNotePage extends StatefulWidget {
   const EditNotePage({Key? key}) : super(key: key);
+
+  @override
+  State<EditNotePage> createState() => _EditNotePageState();
+}
+
+class _EditNotePageState extends State<EditNotePage> {
+  final _titleTextController = TextEditingController();
+  final _contentTextController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _titleTextController.dispose();
+    _contentTextController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     EditNoteBloc? bloc;
+    final Note? note = ModalRoute.of(context)!.settings.arguments as Note?;
+    if (note?.title?.isNotEmpty == true) {
+      _titleTextController.text = note!.title!;
+    }
+    if (note?.content?.isNotEmpty == true) {
+      _contentTextController.text = note!.content!;
+    }
     return BlocProvider<EditNoteBloc>(
       create: (context) {
         bloc = EditNoteBloc();
@@ -25,8 +47,9 @@ class EditNotePage extends StatelessWidget {
                 bloc?.add(
                   EditNoteEvent(
                     Note(
-                      content: "测试内容",
-                      title: "测试标题",
+                      id: note?.id,
+                      content: _contentTextController.text,
+                      title: _titleTextController.text,
                     ),
                   ),
                 );
@@ -39,27 +62,29 @@ class EditNotePage extends StatelessWidget {
             debugPrint(state.toString());
           },
           child: Column(
-            children: const [
+            children: [
               Padding(
-                padding: EdgeInsets.only(top: 4, left: 12, right: 12),
+                padding: const EdgeInsets.only(top: 4, left: 12, right: 12),
                 child: TextField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: UnderlineInputBorder(),
                     hintText: "标题",
                   ),
+                  controller: _titleTextController,
                 ),
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 24, left: 12, right: 12),
+                  padding: const EdgeInsets.only(top: 24, left: 12, right: 12),
                   child: TextField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: UnderlineInputBorder(),
                       hintText: '内容',
                     ),
                     keyboardType: TextInputType.multiline,
                     maxLines: null,
                     minLines: 5,
+                    controller: _contentTextController,
                   ),
                 ),
               ),
