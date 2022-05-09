@@ -7,4 +7,7 @@ abstract class NoteRepository {
 
   /// 保存/创建笔记
   Future<void> saveNote(Note note);
+
+  /// 删除所有笔记
+  Future<void> deleteAll();
 }

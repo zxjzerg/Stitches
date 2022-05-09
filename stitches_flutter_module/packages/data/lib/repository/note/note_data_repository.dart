@@ -18,4 +18,9 @@ class NoteDataRepository extends NoteRepository {
   Future<void> saveNote(Note note) {
     return localDataSource.saveNote(note);
   }
+
+  @override
+  Future<void> deleteAll() {
+    return localDataSource.deleteAllNotes();
+  }
 }

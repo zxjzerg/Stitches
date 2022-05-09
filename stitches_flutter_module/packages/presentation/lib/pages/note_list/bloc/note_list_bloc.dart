@@ -18,5 +18,12 @@ class NoteListBloc extends Bloc<NoteListEvent, NoteListState> {
           .then((value) => emit(NoteListLoadSuccess(value)))
           .catchError((_) => emit(NoteListLoadFailed()));
     });
+
+    on<DeleteAllNotesEvent>((event, emit) async {
+      await repository
+          .deleteAll()
+          .then((value) => add(LoadNoteListEvent()))
+          .catchError((_) => emit(NoteListLoadFailed()));
+    });
   }
 }

@@ -60,6 +60,9 @@ class _EditNotePageState extends State<EditNotePage> {
         body: BlocListener<EditNoteBloc, EditNoteState>(
           listener: (context, state) {
             debugPrint(state.toString());
+            if (state is EditNoteSuccess) {
+              Navigator.pop(context, true);
+            }
           },
           child: Column(
             children: [
