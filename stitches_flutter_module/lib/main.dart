@@ -1,7 +1,6 @@
 import 'package:data/common/stitches_data.dart';
 import 'package:flutter/material.dart';
-import 'package:presentation/pages/edit_note/edit_note_page.dart';
-import 'package:presentation/pages/note_list/note_list_page.dart';
+import 'package:presentation/common/stitches_route.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,11 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "/note/list",
-      routes: {
-        "/note/edit": (context) => const EditNotePage(),
-        "/note/list": (context) => const NoteListPage(),
-      },
+      initialRoute: StitchesRoute.noteListPage,
+      routes: StitchesRoute.routes,
     );
   }
 }

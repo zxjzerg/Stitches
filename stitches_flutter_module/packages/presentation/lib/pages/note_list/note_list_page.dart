@@ -1,6 +1,7 @@
 import 'package:data/model/note.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:presentation/common/stitches_route.dart';
 import 'package:presentation/pages/note_list/bloc/note_list_bloc.dart';
 
 /// 笔记列表界面
@@ -23,7 +24,7 @@ class NoteListPage extends StatelessWidget {
                   subtitle: Text("${note.content}"),
                   onTap: () => Navigator.pushNamed(
                     context,
-                    "/note/edit",
+                    StitchesRoute.editNotePage,
                     arguments: note,
                   ),
                 );
@@ -35,7 +36,7 @@ class NoteListPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/note/edit');
+          Navigator.pushNamed(context, StitchesRoute.editNotePage);
         },
         child: const Icon(Icons.add),
       ),
