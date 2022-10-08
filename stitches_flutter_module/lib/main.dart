@@ -1,5 +1,6 @@
 import 'package:data/common/stitches_data.dart';
 import 'package:flutter/material.dart';
+import 'package:framework/common/framework.dart';
 import 'package:presentation/common/stitches_route.dart';
 
 void main() {
@@ -27,5 +28,6 @@ class MyApp extends StatelessWidget {
 
 /// 初始化依赖注入
 initDi() {
+  StitchesFramework.initDi();
   StitchesData.initDi();
 }
