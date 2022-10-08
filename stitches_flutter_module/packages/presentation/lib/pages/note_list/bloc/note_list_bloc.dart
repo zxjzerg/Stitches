@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:data/model/note.dart';
-import 'package:data/repository/note/note_repository.dart';
+import 'package:core/entity/note.dart';
+import 'package:data/note/repository/note_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:get_it/get_it.dart';
 import 'package:meta/meta.dart';

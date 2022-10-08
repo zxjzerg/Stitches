@@ -1,0 +1,6 @@
+name: framework_integrated
+description: 提供基础能力，例如数据存储等。当Flutter作为模块集成在Native App中时使用
+publish_to: none
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"

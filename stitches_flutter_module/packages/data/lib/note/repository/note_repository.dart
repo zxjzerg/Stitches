@@ -1,4 +1,4 @@
-import 'package:data/model/note.dart';
+import 'package:core/entity/note.dart';
 
 /// 记事本的数据操作方法的接口
 abstract class NoteRepository {

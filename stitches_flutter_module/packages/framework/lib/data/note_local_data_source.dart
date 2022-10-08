@@ -1,4 +1,4 @@
-import 'package:data/model/note.dart';
+import 'package:core/entity/note.dart';
 import 'package:get_it/get_it.dart';
 import 'package:localstore/localstore.dart';
 

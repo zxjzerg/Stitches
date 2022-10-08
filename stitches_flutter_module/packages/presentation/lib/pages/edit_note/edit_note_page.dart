@@ -1,4 +1,4 @@
-import 'package:data/model/note.dart';
+import 'package:core/entity/note.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:presentation/pages/edit_note/bloc/edit_note_bloc.dart';
