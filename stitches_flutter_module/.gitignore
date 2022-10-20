@@ -1,52 +1,27 @@
+## Mac文件系统
+# 这个文件存储了包含它的文件夹的一些自定义信息，比如图标
 .DS_Store
-.dart_tool/
 
+## Dart相关的忽略设置
+# 这个目录包含了Dart工具用到的文件
+.dart_tool/ 
+# 存储用到的package的一些信息，这个文件已经被新版本Dart弃用
 .packages
-.pub/
-
-.idea/
-.vagrant/
-.sconsign.dblite
-.svn/
-
-*.swp
-profile
-
-DerivedData/
-
-.generated/
-
-*.pbxuser
-*.mode1v3
-*.mode2v3
-*.perspectivev3
-
-!default.pbxuser
-!default.mode1v3
-!default.mode2v3
-!default.perspectivev3
-
-xcuserdata
-
-*.moved-aside
-
-*.pyc
-*sync/
-Icon?
-.tags*
-
+# 包含编译过程中生成的文件
 build/
+# 依赖管理的文件，这个文件有点特殊。
+# 如果是工程项目，这个文件最好提交上去，保证用到的依赖都是统一的版本。
+# 如果是库项目，则不需要提交这个文件，可以使用符合要求的最新版本的依赖。
+# pubspec.lock
+
+## IntelliJ编辑器相关
+.idea/
+*.iml
+*.ipr
+*.iws
+
+## Flutter相关的忽略文件
 .android/
 .ios/
 .flutter-plugins
 .flutter-plugins-dependencies
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-pubspec.lock
-
-*.iml
