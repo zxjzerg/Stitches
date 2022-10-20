@@ -117,14 +117,14 @@ packages:
     source: sdk
     version: "0.0.0"
   framework:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../framework"
       relative: true
     source: path
     version: "0.0.0"
   framework_integrated:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../framework_integrated"
       relative: true

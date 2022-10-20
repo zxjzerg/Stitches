@@ -1,11 +1,14 @@
 import 'package:core/entity/note.dart';
-import 'package:get_it/get_it.dart';
 import 'package:localstore/localstore.dart';
 
-/// 笔记的本地数据源，使用了[LocalStore](https://pub.dev/packages/localstore)库
-/// 来存储数据。
+/// 笔记的本地数据源，使用了[LocalStore](https://pub.dev/packages/localstore)库来存储数据。
 class NoteLocalDataSource {
-  final _db = GetIt.I.get<Localstore>();
+  /// 数据库
+  late Localstore _db;
+
+  NoteLocalDataSource() {
+    _db = Localstore.instance;
+  }
 
   Future<List<Note>> getNotes() async {
     final List<Note> notes = [];
