@@ -67,26 +67,33 @@ class _EditNotePageState extends State<EditNotePage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 4, left: 12, right: 12),
+                padding: const EdgeInsets.only(top: 12, left: 16, right: 16),
                 child: TextField(
                   decoration: const InputDecoration(
-                    border: UnderlineInputBorder(),
+                    border: OutlineInputBorder(),
                     hintText: "标题",
+                    contentPadding: EdgeInsets.all(12),
                   ),
                   controller: _titleTextController,
                 ),
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 24, left: 12, right: 12),
+                  padding: const EdgeInsets.only(
+                    top: 12,
+                    left: 16,
+                    right: 16,
+                    bottom: 12,
+                  ),
                   child: TextField(
                     decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
+                      border: OutlineInputBorder(),
                       hintText: '内容',
+                      contentPadding: EdgeInsets.all(12),
                     ),
                     keyboardType: TextInputType.multiline,
                     maxLines: null,
-                    minLines: 5,
+                    minLines: 100,
                     controller: _contentTextController,
                   ),
                 ),
