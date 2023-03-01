@@ -41,8 +41,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // Flutter
-    debugApi 'io.github.zxjzerg.stitches.flutter.module:flutter_debug:1.0'
-    releaseApi 'io.github.zxjzerg.stitches.flutter.module:flutter_release:1.0'
+    if (useFlutterSourceCode == 'true') {
+        api project(":flutter")
+    } else {
+        debugApi 'io.github.zxjzerg.stitches.flutter.module:flutter_debug:1.0'
+        releaseApi 'io.github.zxjzerg.stitches.flutter.module:flutter_release:1.0'
+    }
 
     implementation "com.google.dagger:hilt-android:2.38.1"
     kapt "com.google.dagger:hilt-compiler:2.38.1"

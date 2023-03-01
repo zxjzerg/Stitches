@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    // repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
@@ -18,4 +18,15 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Stitches"
 include ':app'
-include ':flutter'
+include ':flutter_bridge'
+
+// check if need to add some configuration when using flutter source directly
+if (useFlutterSourceCode == 'true') {
+    setBinding(new Binding([gradle: this]))
+    evaluate(new File(
+            settingsDir.parentFile,
+            'stitches_flutter_module/.android/include_flutter.groovy'
+    ))
+}
+include ':stitches_flutter_module'
+project(':stitches_flutter_module').projectDir = new File('../stitches_flutter_module')
