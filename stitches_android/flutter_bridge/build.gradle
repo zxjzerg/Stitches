@@ -31,6 +31,8 @@ android {
     }
 }
 
+apply from: '../stitches.gradle'
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -41,7 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // Flutter
-    if (useFlutterSourceCode == 'true') {
+    if (useFlutterSourceCode()) {
         api project(":flutter")
     } else {
         debugApi 'io.github.zxjzerg.stitches.flutter.module:flutter_debug:1.0'

@@ -20,8 +20,10 @@ rootProject.name = "Stitches"
 include ':app'
 include ':flutter_bridge'
 
+apply from: 'stitches.gradle'
+
 // check if need to add some configuration when using flutter source directly
-if (useFlutterSourceCode == 'true') {
+if (useFlutterSourceCode()) {
     setBinding(new Binding([gradle: this]))
     evaluate(new File(
             settingsDir.parentFile,

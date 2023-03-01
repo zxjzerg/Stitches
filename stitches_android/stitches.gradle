@@ -1,0 +1,10 @@
+ext.useFlutterSourceCode = {
+    // check configuration in local.properties
+    Properties properties = new Properties()
+    properties.load(new File('local.properties').newDataInputStream())
+    if (properties.getProperty('stitches.flutter.useSourceCode') != null) {
+        return properties.getProperty('stitches.flutter.useSourceCode', 'false').toBoolean()
+    }
+
+    return providers.gradleProperty('stitches.flutter.useSourceCode').getOrElse('false').toBoolean()
+}
