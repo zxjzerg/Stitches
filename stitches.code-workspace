@@ -4,7 +4,10 @@
 			"path": "stitches_flutter_module"
 		},
 		{
-			"path": "stitches_flutter"
+			"path": "stitches_flutter_packages"
+		},
+		{
+			"path": "stitches_flutter_app"
 		}
 	]
 }

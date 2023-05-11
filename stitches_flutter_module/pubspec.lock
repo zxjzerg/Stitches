@@ -52,14 +52,14 @@ packages:
   core:
     dependency: transitive
     description:
-      path: "packages/core"
+      path: "../stitches_flutter_packages/core"
       relative: true
     source: path
     version: "0.0.0"
   data:
     dependency: "direct main"
     description:
-      path: "packages/data"
+      path: "../stitches_flutter_packages/data"
       relative: true
     source: path
     version: "0.0.0"
@@ -124,14 +124,14 @@ packages:
   framework:
     dependency: "direct main"
     description:
-      path: "packages/framework"
+      path: "../stitches_flutter_packages/framework"
       relative: true
     source: path
     version: "0.0.0"
   framework_integrated:
     dependency: "direct main"
     description:
-      path: "packages/framework_integrated"
+      path: "../stitches_flutter_packages/framework_integrated"
       relative: true
     source: path
     version: "0.0.0"
@@ -274,7 +274,7 @@ packages:
   presentation:
     dependency: "direct main"
     description:
-      path: "packages/presentation"
+      path: "../stitches_flutter_packages/presentation"
       relative: true
     source: path
     version: "0.0.0"
