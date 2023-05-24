@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: StitchesRoute.noteListPage,
+      initialRoute: StitchesRoute.homePage,
       routes: StitchesRoute.routes,
     );
   }
